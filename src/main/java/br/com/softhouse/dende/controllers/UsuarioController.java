@@ -1,6 +1,7 @@
 package br.com.softhouse.dende.controllers;
 
 import br.com.dende.softhouse.annotations.Controller;
+import br.com.dende.softhouse.annotations.request.GetMapping;
 import br.com.dende.softhouse.annotations.request.PostMapping;
 import br.com.dende.softhouse.annotations.request.PutMapping;
 import br.com.dende.softhouse.annotations.request.RequestBody;
@@ -23,6 +24,11 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<String> cadastroUsuario(@RequestBody Usuario usuario){
         return ResponseEntity.ok("Usuario " + usuario.getEmail() + " registrado com sucesso!");
+    }
+
+    @GetMapping
+    public ResponseEntity<String> getUsuario() {
+        return ResponseEntity.ok("Empty");
     }
 
     @PutMapping(path = "/{usuarioId}")
